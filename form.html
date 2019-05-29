@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Write URL on which you want to go</title>
+        <script>
+            
+            function foo(){
+                console.log("foo called");
+                var form = document.getElementById("myform");
+                var url = document.getElementById("url").value;
+                console.log(url);
+                form.action = url;
+                console.log(form.action);
+                form.submit();
+            }
+        </script>
+    </head>
+    <body>
+        <form method="POST" id="myform">    
+            url:
+            <input type="text" id="url">
+            <input type="button" name="btnSubmit" value="GO!" onclick="foo()">
+        </form>
+    </body>
+</html>

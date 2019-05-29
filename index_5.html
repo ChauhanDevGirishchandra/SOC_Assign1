@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First subwindow</title>
+        <style>
+            #myframe{
+                /* margin: auto;
+                height: 50%;
+                width: 60%; */
+                border: 2px solid black;
+                box-align: "middle"; 
+            }   
+            html, body
+            {
+                height: 100%;
+            }
+        </style>
+        <script>
+        function resize(){
+            console.log("called");
+            var width = document.getElementById("width").value;
+            var height = document.getElementById("height").value;
+            var inner = document.getElementById("myframe");
+            
+            inner.setAttribute("width", width);
+            inner.setAttribute("height", height);
+        }
+        </script>
+    </head>
+    <body>
+    <!-- <div> -->
+        <iframe id="myframe" src="form.html" width="60%" height="40%">
+            
+
+        </iframe>
+            
+    <!-- </div> -->
+    <br>
+    Enter width and height in pixels to resize the inner-window<br>
+    width: <input type="text" id="width"><br>
+    height:<input type="text" id="height">
+    <br>
+    <input type="button" value="Resize inner-window" onclick="resize()">
+    </body>
+</html>
